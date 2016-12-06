@@ -31,6 +31,7 @@ Goals:
 Stretch Goals:
 - [ ] Track each customer's pizza **preferences**
 - [ ] Track the **ingredients** that comprise each of these preferences (e.g., onions, ham, pineapple, anchovies, bacon, etc.)
+- [ ] Add hybrid Standard Pizza option (Crust type on standard pizza).
 
 HINT: if you see an item in bold, you may want to consider creating a table for that item. :)
 
