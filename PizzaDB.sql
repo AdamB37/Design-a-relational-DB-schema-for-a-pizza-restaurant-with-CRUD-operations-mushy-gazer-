@@ -3,8 +3,6 @@ CREATE DATABASE pizza;
 
 \c pizza;
 
-/* working on naming convention. for example: name is a reserved word
-  therefore name can not be a colum name. datetime is also reserved. */
 
 CREATE TABLE customer (
   customer_id SERIAL PRIMARY KEY,
@@ -55,7 +53,7 @@ CREATE TABLE transaction (
   /*Can this import price or price paid,delivery address? Need to discuss */
 );
 
-CREATE TABLE order (
+CREATE TABLE customer_order (
   order_id SERIAL PRIMARY KEY,
   order_price DECIMAL(10,2)
 );
