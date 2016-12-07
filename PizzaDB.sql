@@ -3,6 +3,8 @@ CREATE DATABASE pizza;
 
 \c pizza;
 
+/* working on naming convention. for example: name is a reserved word
+  therefore name can not be a colum name. datetime is also reserved. */
 
 CREATE TABLE customer (
   customer_id SERIAL PRIMARY KEY,
@@ -15,25 +17,24 @@ CREATE TABLE customer (
 CREATE TABLE driver (
   driver_id SERIAL PRIMARY KEY,
   delivery_datetime DATETIME,
-  money_collected DECIMAL(10,2)
-  /* this table has two foreign keys. added after db creation */
+  money_collected DECIMAL(10,2),
+  transaction_id SERIAL REFERENCES transaction (transaction_id),
+  customer_id SERIAL REFERENCES customer (customer_id)
 );
 
 CREATE TABLE customer_transaction (
   transaction_id SERIAL REFERENCES transaction (transaction_id),
   customer_id SERIAL REFERENCES customer (customer_id)
-  /* TODO: this table needs two foreign keys added after DB creation */
 );
 
 CREATE TABLE card_on_file (
   customer_id SERIAL REFERENCES customer (customer_id),
   credit_id SERIAL REFERENCES credit (credit_id)
-  /* TODO: this table needs two foreign keys added after db creation */
 );
 
 CREATE TABLE transaction_payment (
-
-  /* TODO: this table needs two foreign keys added after db cretion */
+  credit_id SERIAL REFERENCES credit (credit_id),
+  transaction_id SERIAL REFERENCES transaction (transaction_id)
 );
 
 CREATE TABLE credit (
@@ -49,8 +50,6 @@ CREATE TABLE transaction (
   transaction_id SERIAL PRIMARY KEY,
   price DECIMAL(10,2),
   delivery_date DATE
-  /* TODO: this table needs one foreign key added after db creation */
-  /*Can this import price or price paid,delivery address? Need to discuss */
 );
 
 CREATE TABLE customer_order (
@@ -59,7 +58,8 @@ CREATE TABLE customer_order (
 );
 
 CREATE TABLE order_standard_pizza (
-  /* TODO: this table needs two foreign keys added after db creation */
+  standard_pizza_id SERIAL REFERENCES standard_pizza (standard_pizza_id),
+  order_id SERIAL REFERENCES customer_order (order_id)
 );
 
 CREATE TABLE standard_pizza (
@@ -69,7 +69,8 @@ CREATE TABLE standard_pizza (
 );
 
 CREATE TABLE order_custom_pizza (
-  /* TODO: this table needs two foreign keys added after db creation */
+  custom_pizza_id SERIAL REFERENCES custom_pizza (custom_pizza_id),
+  order_id SERIAL REFERENCES customer_order (order_id)
 );
 
 CREATE TABLE custom_pizza (
@@ -79,7 +80,8 @@ CREATE TABLE custom_pizza (
 );
 
 CREATE TABLE order_topping (
-  /* TODO: this table needs two foreign keys added after db creation */
+  custom_pizza_id SERIAL REFERENCES custom_pizza (custom_pizza_id),
+  topping_id SERIAL REFERENCES topping (topping_id)
 );
 
 CREATE TABLE topping (
@@ -89,7 +91,8 @@ CREATE TABLE topping (
 );
 
 CREATE TABLE order_crust (
-  /* TODO: this table needs two foreign keys added after db creation */
+  crust_id SERIAL REFERENCES crust (crust_id),
+  custom_pizza_id SERIAL REFERENCES custom_pizza (custom_pizza_id)
 );
 
 CREATE TABLE crust (
@@ -99,7 +102,8 @@ CREATE TABLE crust (
 );
 
 CREATE TABLE order_drink (
-  /* TODO: this table needs two foreign keys added after db creation */
+  order_id SERIAL REFERENCES customer_order (order_id),
+  drink_id SERIAL REFERENCES drink (drink_id)
 );
 
 CREATE TABLE drink (
@@ -112,8 +116,3 @@ CREATE TABLE drink (
 
 INSERT INTO customer (name, login, address, pay_method)
   VALUES ('John Doe', 'jdoe', '111 First Street', 'cash');
-
-ALTER TABLE driver
-  ADD FOREIGN KEY (transaction_id) REFERENCES transaction (transaction_id);
-  ADD FOREIGN KEY (customer_id) REFERENCES customer (customer_id);
-  /*read documentation saying we can add foreign keys in creating tables*/
