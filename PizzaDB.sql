@@ -110,7 +110,7 @@ CREATE TABLE order_drink (
   drink_id SERIAL REFERENCES drink (drink_id)
 );
 INSERT INTO tax_jurisdiction(jurisdiction_name, tax_rate)
-  VALUES ('Colorado', 2.9),(),(),();
+  VALUES ('Colorado', 2.9),('Arizona', 5.6),('New Mexico', 5.13),('Utah', 5.0);
 
 INSERT INTO customer(customer_name, login, phone, street_address, state, zip_code, jurisdiction_id)
   VALUES ('John Doe', 'jdoe', '8675309', '111 First Street', 'ca', '55555', 1);
