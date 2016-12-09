@@ -1,0 +1,28 @@
+{
+  "name": "pizza",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamB37/Design-a-relational-DB-schema-for-a-pizza-restaurant-with-CRUD-operations-mushy-gazer-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamB37/Design-a-relational-DB-schema-for-a-pizza-restaurant-with-CRUD-operations-mushy-gazer-/issues"
+  },
+  "homepage": "https://github.com/AdamB37/Design-a-relational-DB-schema-for-a-pizza-restaurant-with-CRUD-operations-mushy-gazer-#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "pg-promise": "^5.4.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
