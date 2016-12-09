@@ -2,7 +2,7 @@
 
 ## Description
 
-Piccadilly Pizza is a diamond in the rough: their deep dish is the bomb dot com, but they're just breaking even because they lack the easy-to-use online ordering interface that will give them a competitive edge.
+Piccadilly Pizza is a diamond in the rough: their deep dish is the bomb dot com! They're just breaking even because they lack the easy-to-use online ordering interface that will give them a competitive edge.
 
 Your job is to design a schema based on the guidelines Piccadilly Pizza has provided, complete with a programmatic component that allows for basic to CRUD operations on the data.
 
@@ -13,7 +13,7 @@ Your job is also to provide a basic API that provides the ability to CRUD the da
 
 This project will give you experience in designing a robust schema that represents a complex, real-world system as well as an introduction to how to update your DB without having to worry too much about complex join operations.
 
-The suggested prerequisite knowledge for this goal: #96 + having a relative level comfort with implementing CRUD operations. 
+The suggested prerequisite knowledge for this goal: #96 + having a relative level comfort with implementing CRUD operations.
 ## Specifications
 
 Before diving in, it is **strongly recommended** to review the video and code from @tannerwelsh's remote cognitive apprenticeship session: [Relational DB schema design for a bookstore](https://github.com/GuildCrafts/cog-app/tree/master/sessions/02-bookstore-db-schema-20161026).
@@ -35,17 +35,17 @@ Stretch Goals:
 - [ ] Once the javascript sends the order to the database, the website will visually confirm the order was received.
 HINT: if you see an item in bold, you may want to consider creating a table for that item. :)
 
-Please feel free to adapt the content of the data to your personal preferences or adjust your schema to support any other data types or operations you can think of. 
+Please feel free to adapt the content of the data to your personal preferences or adjust your schema to support any other data types or operations you can think of.
 
-Also feel free to alter the spec according to what your team is realistically able to accomplish during the course of a week. 
+Also feel free to alter the spec according to what your team is realistically able to accomplish during the course of a week.
 
 [Get creative](https://www.youtube.com/watch?v=9C_HReR_McQ)!
 ### Required
 - [ ] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
 ## Quality Rubric
-- The E-R diagram is fully fleshed out according to spec. 
-- The E-R diagram includes whether or not each relationship in the schema is is one to one, one to many, or many to many. 
-- The E-R diagram contains a list of attributes for each entity and relationship 
+- The E-R diagram is fully fleshed out according to spec.
+- The E-R diagram includes whether or not each relationship in the schema is is one to one, one to many, or many to many.
+- The E-R diagram contains a list of attributes for each entity and relationship
 - The E-R diagram contains the SQL data types of each attribute in the schema
 - The E-R diagram  notes any foreign or primary keys in each table in the schema
 - The E-R diagram minimizes data redundancy
