@@ -14,6 +14,7 @@
 // create a customer_order: path is /createorder
 {
   "total_price" : "50.00",
+  "discount" : "0.00",
   "pay_method" : "cash",
   "delivery_time" : "2016-12-09 12:00:00",
   "driver_id" : 1,

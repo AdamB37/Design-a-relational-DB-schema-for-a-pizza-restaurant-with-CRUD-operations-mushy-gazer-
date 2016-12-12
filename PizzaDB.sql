@@ -22,8 +22,8 @@ CREATE TABLE customer (
 
 CREATE TABLE credit (
   credit_id SERIAL PRIMARY KEY,
-  credit_type VARCHAR,
-  card_number VARCHAR,
+  credit_type VARCHAR(100),
+  card_number VARCHAR(100),
   expiration_date VARCHAR(4),
   csv INTEGER,
   cardholder_name VARCHAR(100)
@@ -37,6 +37,7 @@ CREATE TABLE driver (
 CREATE TABLE customer_order (
   order_id SERIAL PRIMARY KEY,
   total_price DECIMAL(10,2),
+  discount DECIMAL(10,2),
   pay_method VARCHAR(45),
   delivery_time TIMESTAMP,
   driver_id SERIAL REFERENCES driver (driver_id),
@@ -67,7 +68,7 @@ CREATE TABLE topping (
 
 CREATE TABLE crust (
   crust_id SERIAL PRIMARY KEY,
-  crust_type VARCHAR
+  crust_type VARCHAR(50)
 );
 
 CREATE TABLE standard_pizza (
@@ -90,17 +91,20 @@ CREATE TABLE drink (
 );
 
 CREATE TABLE order_standard_pizza (
+  order_standard_pizza_id SERIAL PRIMARY KEY,
   standard_pizza_id SERIAL REFERENCES standard_pizza (standard_pizza_id),
   crust_id SERIAL REFERENCES crust (crust_id),
   base_pizza_id SERIAL REFERENCES base_pizza (base_pizza_id),
-  order_id SERIAL REFERENCES customer_order (order_id)
+  order_id SERIAL REFERENCES customer_order (order_id),
+  quantity INTEGER
 );
 
 CREATE TABLE order_custom_pizza (
+  order_custom_pizza_id SERIAL PRIMARY KEY,
   custom_pizza_id SERIAL REFERENCES custom_pizza (custom_pizza_id),
   crust_id SERIAL REFERENCES crust (crust_id),
   base_pizza_id SERIAL REFERENCES base_pizza (base_pizza_id),
-  order_id SERIAL REFERENCES customer_order (order_id)
+  quantity INTEGER
 );
 
 CREATE TABLE order_drink (
