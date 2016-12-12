@@ -1,0 +1,36 @@
+
+
+// create a customer: path is /customers
+{
+  "customer_name": "John Roberts",
+  "login": "jrob",
+  "phone": "1234567890",
+  "street_address": "1234 Sesame St.",
+  "state": "NY",
+  "zip_code": "10001",
+  "jurisdiction_id": 1
+}
+
+// create a customer_order: path is /createorder
+{
+  "total_price" : "50.00",
+  "pay_method" : "cash",
+  "delivery_time" : "2016-12-09 12:00:00",
+  "driver_id" : 1,
+  "customer_id" : 1
+}
+
+// add a standard pizza to the order: path is /orderstandardpizza
+// this example creates a large double pepperoni pizza with thin crust
+{
+  "standard_pizza_id": 4,
+  "crust_id": 1,
+  "base_pizza_id": 3,
+  "order_id": 1
+}
+
+// add a drink to the order: path is /orderdrink
+{
+  "drink_id": 3,
+  "order_id": 1
+}
